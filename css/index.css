@@ -8,6 +8,20 @@ body {
   src: url("../fonts/ManuskriptGotisch.ttf") format("truetype");
 }
 
+.site-wrapper {
+	background: url("../images/background.jpg");
+	background-position: fixed;
+	background-attachment: fixed;
+}
+
+.light-section {
+	background-color: rgba(255,255,255,0.89);
+}
+
+.dark-section {
+	background-color: rgba(0,0,0,0.89);
+}
+
 /* Header Styling */
 
 .header-wrapper {
@@ -22,7 +36,6 @@ body {
 }
 
 #about {
-	background: url("../images/about-bg.png");
 	color: #D0D0D0;
 }
 
