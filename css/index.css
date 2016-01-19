@@ -1,0 +1,40 @@
+body { 
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; 
+	background-color: #FFFFFF;
+}
+
+@font-face {
+  font-family: "Manuskript Gotisch";
+  src: url("../fonts/ManuskriptGotisch.ttf") format("truetype");
+}
+
+/* Header Styling */
+
+.header-wrapper {
+	padding: 1em;
+	text-align: center;
+}
+
+/* Content Styling */
+
+.sections-wrapper {
+
+}
+
+#about {
+	background: url("../images/about-bg.png");
+	color: #D0D0D0;
+}
+
+.content-wrapper {
+	max-width: 60em;
+	padding: 1em;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.content-wrapper h1 {
+	font-family: "Manuskript Gotisch";
+	margin-top: 0px;
+	text-align: center;
+}
