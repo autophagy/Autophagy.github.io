@@ -1,6 +1,9 @@
 body { 
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; 
 	background-color: #FFFFFF;
+	background: url("../images/background.jpg");
+	background-position: center;
+	background-attachment: fixed;
 }
 
 @font-face {
@@ -15,12 +18,6 @@ a {
 
 a:hover {
 	color: #000000;
-}
-
-.site-wrapper {
-	background: url("../images/background.jpg");
-	background-position: center;
-	background-attachment: fixed;
 }
 
 .light-section {
