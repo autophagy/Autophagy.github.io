@@ -73,6 +73,16 @@ a:hover {
 	border-radius: 0em 0.3em 0em 0em;
 }
 
+#projects span.project-link {
+	color: #333333;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+#projects span.project-link:hover {
+	color: #000000;
+}
+
 #contact #contact-links {
 	text-align: center;
 }
