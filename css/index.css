@@ -8,6 +8,15 @@ body {
   src: url("../fonts/ManuskriptGotisch.ttf") format("truetype");
 }
 
+a {
+	color: #333333;
+	font-weight: bold;
+}
+
+a:hover {
+	color: #000000;
+}
+
 .site-wrapper {
 	background: url("../images/background.jpg");
 	background-position: fixed;
