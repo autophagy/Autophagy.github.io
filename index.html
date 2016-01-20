@@ -21,7 +21,12 @@
   </head>
   <body>
   
-    <div class="site-wrapper">
+    <div id="site-wrapper">
+		
+		<script>
+			document.getElementById('site-wrapper').style.display = 'none';
+		</script>
+		
 	  <div class="header-wrapper light-section">
 		
 	    <div id="logo-wrapper">
@@ -94,10 +99,8 @@
     <script src="js/bootstrap.min.js"></script>
 		
 		<script>
-			$('.site-wrapper').hide();
-			
 			$(window).on('load', function() {
-				$(".site-wrapper").fadeIn(400);
+				$("#site-wrapper").fadeIn(400);
 			});
 		</script>
 		
