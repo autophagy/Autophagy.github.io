@@ -43,6 +43,12 @@ a:hover, .link:hover {
 
 #title-page #logo {
 	padding: 200px 10px 0 10px;
+	display: inline-block;
+    width: 100%;
+}
+
+#title-page #logo img {
+	max-width: 100%;
 }
 
 #title-page  #nav-links {
