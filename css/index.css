@@ -136,6 +136,7 @@ a:visited {
 	display: inline-block;
 	margin: 1em 1.3em;
 	position: relative;
+	cursor: pointer;
 }
 
 #projects li img.desat-img {
