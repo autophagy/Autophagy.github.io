@@ -69,12 +69,15 @@ a:visited {
 #title-page {
 	height: 100%;
 	text-align: center;
+	display: flex;
+	justify-content: center;
 }
 
 #title-page #logo {
-	padding: 200px 10px 0 10px;
+	padding: 10px;
 	display: inline-block;
     width: 100%;
+	align-self: center;
 }
 
 #title-page #logo img {
