@@ -42,7 +42,7 @@ a:hover, .link:hover {
 }
 
 #title-page #logo {
-	padding: 200px;
+	padding: 200px 10px 0 10px;
 }
 
 #title-page  #nav-links {
