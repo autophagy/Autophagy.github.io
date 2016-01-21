@@ -59,6 +59,10 @@ a:visited {
 	cursor: pointer;
 }
 
+#site-wrapper {
+	height: 100%;
+}
+
 
 /* Title Page */
 
