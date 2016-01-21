@@ -1,0 +1,60 @@
+html, body {
+	height: 100%;
+}
+
+body { 
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; 
+	background-color: #FFFFFF;
+	background: url("../images/background.jpg");
+	background-position: center;
+	background-attachment: fixed;
+	font-size: 1.7em;
+}
+
+@font-face {
+  font-family: "Manuskript Gotisch";
+  src: url("../fonts/ManuskriptGotisch.ttf") format("truetype");
+}
+
+a, .link {
+	color: #333333;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+a:hover, .link:hover {
+	color: #000000;
+	cursor: pointer;
+}
+
+.light-section {
+	background-color: rgba(255,255,255,0.89);
+}
+
+.dark-section {
+	background-color: rgba(0,0,0,0.89);
+	color: #D0D0D0;
+}
+
+#title-page {
+	height: 100%;
+	text-align: center;
+}
+
+#title-page #logo {
+	padding: 200px;
+}
+
+#title-page  #nav-links {
+	height: 100%;
+	text-align: center;
+	font-size: 2em;
+	padding-top: 1em;
+}
+
+#title-page  .link {
+	height: 100%;
+	text-align: center;
+	padding: 0em 1em;
+	font-weight: normal;
+}
