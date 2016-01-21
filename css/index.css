@@ -138,6 +138,11 @@ a:visited {
 	position: relative;
 }
 
+#projects li img.desat-img {
+	position: absolute;
+	display: none;
+}
+
 #projects li span.project-title {
 	background-color: rgba(241, 241, 241, 0.87);
 	position: absolute;

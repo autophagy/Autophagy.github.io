@@ -55,12 +55,54 @@
 					<div class="project-listing">
 						
 						<ul>
-							<li><span class="project-link"><img src="images/multitimer.png"><span class="project-title">Multi/Timer</span></a></li>
-							<li><span class="project-link"><img src="images/mainframe.png"><span class="project-title">Mainframe</span></a></li>
-							<li><span class="project-link"><img src="images/twitter-bg-replacer.png"><span class="project-title">Twitter Background Replacer</span></a></li>
-							<li><span class="project-link"><img src="images/crystalliser.png"><span class="project-title">Crystalliser Bot</span></a></li>
-							<li><span class="project-link"><img src="images/bug-gen.png"><span class="project-title">Bug Generator</span></a></li>
-							<li><span class="project-link"><img src="images/DISC.png"><span class="project-title">DISC</span></a></li>				  
+							<li>
+								<span class="project-link">
+									<img src="images/multitimer-desat.png" class="desat-img">
+									<img src="images/multitimer.png">
+									<span class="project-title">Multi/Timer</span>
+								</span>
+							</li>
+							
+							<li>
+								<span class="project-link">
+									<img src="images/mainframe-desat.png" class="desat-img">
+									<img src="images/mainframe.png">
+									<span class="project-title">Mainframe</span>
+								</a>
+							</li>
+							
+							<li>
+								<span class="project-link">
+									<img src="images/twitter-bg-replacer-desat.png" class="desat-img">
+									<img src="images/twitter-bg-replacer.png">
+									<span class="project-title">Twitter Background Replacer</span>
+								</a>
+							</li>
+							
+							<li>
+								<span class="project-link">
+									<img src="images/crystalliser-desat.png" class="desat-img">
+									<img src="images/crystalliser.png">
+									<span class="project-title">Crystalliser Bot</span>
+								</a>
+							</li>
+							
+							<li>
+								<span class="project-link">
+									<img src="images/bug-gen-desat.png" class="desat-img">
+									<img src="images/bug-gen.png">
+									<span class="project-title">Bug Generator</span>
+								</a>
+							</li>
+							
+							<li>
+								<span class="project-link">
+									<img src="images/DISC-desat.png" class="desat-img">
+									<img src="images/DISC.png">
+									<span class="project-title">DISC</span>
+								</a>
+							</li>				
+							
 						</ul>
 					</div>
 				</div>
@@ -121,6 +163,16 @@
 		</script>
 		
 		<script>
+			$('#projects li img.desat-img').show();
+			
+			$('#projects li').mouseover(function(){
+				$(this).find('img.desat-img').stop().animate({opacity:0}, 200);
+			});
+			
+			$('#projects li').mouseout(function(){
+				$(this).find('img.desat-img').stop().animate({opacity:1}, 200);
+			});			
+		
 			$(window).on('load', function() {
 				$("#site-wrapper").fadeIn(400);
 			});
