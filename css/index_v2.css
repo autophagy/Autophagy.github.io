@@ -20,25 +20,41 @@ body {
   src: url("../fonts/ManuskriptGotisch.ttf") format("truetype");
 }
 
-a, .link {
+.light-section {
+	background-color: rgba(255,255,255,0.89);
+}
+
+.light-section a, .light-section .link {
 	color: #333333;
 	font-weight: bold;
 	cursor: pointer;
 }
 
-a:hover, .link:hover {
+.light-section a:hover, .light-section .link:hover {
 	color: #000000;
+	text-decoration: none;
 	cursor: pointer;
-}
-
-.light-section {
-	background-color: rgba(255,255,255,0.89);
 }
 
 .dark-section {
 	background-color: rgba(0,0,0,0.89);
 	color: #D0D0D0;
 }
+
+.dark-section a, .dark-section .link {
+	color: rgba(255, 255, 255, 0.8);
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.dark-section a:hover, .dark-section .link:hover {
+	color: rgba(255, 255, 255, 1);
+	text-decoration: none;
+	cursor: pointer;
+}
+
+
+/* Title Page */
 
 #title-page {
 	height: 100%;
@@ -67,4 +83,45 @@ a:hover, .link:hover {
 	text-align: center;
 	padding: 0em 1em;
 	font-weight: normal;
+}
+
+/* General Content */
+
+.content-wrapper {
+	padding-top: 1em;
+    position: relative;
+}
+
+.content-wrapper h1 {
+	font-family: "Manuskript Gotisch";
+	margin-top: 0px;
+	font-size: 2.5em;
+	position: absolute;
+    left: 1em;
+    top: 0.5em;
+}
+
+/* Contact */
+
+#contact #contact-links {
+	text-align: center;
+	font-size: 0.8em;
+	font-weight: normal;
+	margin: 1;
+}
+
+#contact ul {
+	list-style: none;
+	display: inline-block;
+	padding-left: 0;
+	margin-top: 10px;
+}
+
+#contact li {
+	float: left;
+	padding: 0 2.7em 0 2.7em;
+}
+
+#contact p {
+	padding-top: 1em;
 }
