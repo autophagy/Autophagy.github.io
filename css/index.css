@@ -156,6 +156,10 @@ a:visited {
 	font-size: 0.9em;
 }
 
+#projects .project-detail {
+	display: none;
+}
+
 /* Contact */
 
 #contact #contact-links {
