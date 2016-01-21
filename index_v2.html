@@ -25,7 +25,7 @@
 			<div id="logo">
 				<img src="images/logo_v2.png">
 				<div id="nav-links">
-					<span class="link">about</span>//<span class="link">projects</span>//<span class="link">contact</span>
+					<a href="#about">about</a>//<a href="#projects">projects</a>//<a href="#contact">contact</a>
 				</div>
 			</div>
 		</div>
@@ -63,6 +63,25 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+		
+		<!-- From https://css-tricks.com/snippets/jquery/smooth-scrolling/ -->
+		<script>
+		$(function() {
+			$('a[href*=#]:not([href=#])').click(function() {
+				if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+
+					var target = $(this.hash);
+					target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+					if (target.length) {
+						$('html,body').animate({
+							scrollTop: target.offset().top
+						}, 1000);
+						return false;
+					}
+				}
+			});
+		});
+		</script>
 		
   </body>
 </html>

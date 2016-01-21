@@ -20,6 +20,10 @@ body {
   src: url("../fonts/ManuskriptGotisch.ttf") format("truetype");
 }
 
+a:visited {
+	text-decoration: none;
+}
+
 .light-section {
 	background-color: rgba(255,255,255,0.89);
 }
@@ -78,7 +82,7 @@ body {
 	padding-top: 1em;
 }
 
-#title-page  .link {
+#title-page  a {
 	height: 100%;
 	text-align: center;
 	padding: 0em 1em;
