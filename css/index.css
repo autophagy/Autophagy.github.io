@@ -126,25 +126,25 @@ a:visited {
 
 /* Projects */
 
-#projects ul {
+#projects ul#project-grid  {
 	list-style: none;
 	padding-left: 0;
 	text-align: center;
 }
 
-#projects li {
+#projects ul#project-grid li {
 	display: inline-block;
 	margin: 1em 1.3em;
 	position: relative;
 	cursor: pointer;
 }
 
-#projects li img.desat-img {
+#projects ul#project-grid li img.desat-img {
 	position: absolute;
 	display: none;
 }
 
-#projects li span.project-title {
+#projects ul#project-grid li span.project-title {
 	background-color: rgba(241, 241, 241, 0.87);
 	position: absolute;
 	left: 0;
@@ -158,6 +158,25 @@ a:visited {
 
 #projects .project-detail {
 	display: none;
+}
+
+#projects .project-detail .centre-image {
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+#projects .project-detail .centre-image img {
+	max-width: 100%;
+}
+
+#projects h2 {
+	text-align: center;
+	font-size: 1.5em;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.19);
+	padding-bottom: 0.4em;
+	margin-top: 0px;
 }
 
 /* Contact */
