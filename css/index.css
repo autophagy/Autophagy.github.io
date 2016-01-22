@@ -106,7 +106,7 @@ a:visited {
 	max-width: 50em;
 	margin-left: auto;
 	margin-right: auto;
-	padding: 1em 0em 1em 0em;
+	padding: 1em 0.5em 1em 0.5em;
 }
 
 .dark-section h1, .light-section h1 {
@@ -157,6 +157,10 @@ a:visited {
 	font-size: 0.9em;
 }
 
+#projects ul#project-grid img {
+	width: 100%;
+}
+
 #projects .project-detail {
 	display: none;
 }
@@ -182,7 +186,11 @@ a:visited {
 
 /* Contact */
 
-#contact #contact-links {
+#contact #contact-links-small {
+	display: none;
+}
+
+#contact #contact-links, #contact #contact-links-small {
 	text-align: center;
 	font-size: 0.8em;
 	font-weight: normal;
@@ -203,4 +211,87 @@ a:visited {
 
 #contact p {
 	padding-top: 1em;
+}
+
+/* Media Queries */
+
+@media only screen and (max-width: 1150px) {
+    .light-section h1, .dark-section h1 {
+		font-size: 1.6em;
+		position: relative;
+		top: 0;
+		left: 0;
+		text-align: center;
+		margin: 0px;
+		padding: 10px;
+		background-color: rgba(130,130,130,0.06);
+	}
+	
+	#about img {
+		width: 28%;
+	}
+}
+
+@media only screen and (max-width: 815px) {
+	#contact li {
+		padding: 0 1em 0 1em;
+	}
+}
+
+@media only screen and (max-width: 670px) {
+
+	#contact #contact-links-small {
+		display: block;
+	}
+	
+	#contact #contact-links {
+		display: none;
+	}
+
+	#contact #contact-links-small li {
+		float: none;
+		padding: 0 0.5em;
+		display: block;
+	}
+
+	#contact #contact-links-small img {
+		float: left;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	#title-page #nav-links {
+		font-size: 1.5em;
+	}
+	
+	#title-page  #nav-links a {
+		padding: 0 0.25em;
+	}
+	
+	#projects ul#project-grid li {
+		display: block;
+		width: 80%;
+		height: 126px;
+		overflow-y: hidden;
+		margin: 10px auto;
+	}
+
+	#projects ul#project-grid li span.project-title {
+		font-size: 0.8em;
+	}
+	
+	#projects ul#project-grid img {
+		position: relative;
+		top: -50%;
+	}
+}
+
+@media only screen and (max-width: 460px) {
+	body {
+		font-size: 1.5em;
+	}
+	
+	#about img {
+		display: none;
+	}
 }
