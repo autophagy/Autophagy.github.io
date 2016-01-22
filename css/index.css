@@ -184,6 +184,11 @@ a:visited {
 	margin-top: 0px;
 }
 
+#projects .project-detail .vimeo-embed {
+	height: 28em;
+	text-align: center;
+}
+
 /* Contact */
 
 #contact #contact-links-small {
@@ -235,6 +240,10 @@ a:visited {
 @media only screen and (max-width: 815px) {
 	#contact li {
 		padding: 0 1em 0 1em;
+	}
+	
+	#projects .project-detail .vimeo-embed {
+	    height: 50vw;
 	}
 }
 
