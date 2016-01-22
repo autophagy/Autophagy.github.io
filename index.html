@@ -243,6 +243,9 @@
 			$('#projects .project-detail span.back').click(function() {
 				$('#projects .project-detail').hide();
 				$('#projects ul#project-grid').fadeIn(400);
+        $('html, body').animate({
+          scrollTop: $("#projects").offset().top
+        }, 400);
 			});
 		
 			$(window).on('load', function() {
