@@ -144,7 +144,25 @@
 						</div>
 						
 						<div id="DISC-detail" class="project-detail">
-							<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus. <span class="link back">Back</span></p>
+							<h2>DISC // Distributed and Secure Communications</h2>
+              <p>DISC was my final year project for my BSc Software Engineering degree. It came about through a desire to try and merge characteristics of Internet Relay Chat with the subjects of encryption, anonymity and peer-to-peer communication.</p>
+
+              <div class="centre-image">
+                <img src="images/projects/disc/disc-client.png">
+              </div>
+
+              <p>DISC allowed users to set up peer-to-peer text-based communication networks, encrypted end-to-end and transmitted through an anonymisation network. The peer-to-peer functionality was implemented via the use of sockets and an algorithm to propagate messages throughout the network by controlled broadcasting to the user's connected peers. The software also let users decide who they connected to as nodes in the network, allowing them to collectively control various aspects of the network such as diameter, bisection width and resource cost. The encryption of messages was done between nodes using public key cryptography & Diffie-Hellman key exchange. Private messaging between 2 nodes that are not directly connected was accomplished using encryption layering, with each layer containing an encrypted payload and directions for which node to pass the payload to, inspired by Tor's onion routing scheme. Anonymisation of clients was achieved through the use of <a href="https://geti2p.net">I2P</a> and their Java sockets API. The use of I2P's destination strings also allowed clients to invite other clients, without revealing their actual IP addresses through the invitations.</p>
+
+              <div class="centre-image">
+                <img src="images/projects/disc/network-diagram.png">
+              </div>
+
+              <p>A large part of this project involved independent research on the topics of peer-to-peer network topologies, encryption/cryptography and anonymity in web communications. This allowed me to persue mathematical, technical and social research that I was interested in, but otherwise would not have come across in my other university modules. It also allowed me to think about the social and ethical concerns of secure and anonymous communication, and how they might affect aspects such as ease-of-use.</p>
+
+              <p>The development process took place over the final year of University and the approach I took was to develop a series of prototypes, 14 in total. Each prototype built upon the complexity of the previous prototype, until all required functionality was in place. It was imperative during development to maintain loose coupling between components, as I could develop without worrying that that I would break functionality in other places. It was also important for me to construct a long term schedule for the project's development, so that I could easily track my progress. When the project was finished, I evaluated it and also asked several people in the secure communication field to give feedback, which was incorporated into my final report.</p>
+
+              <p>The final grade for this project was 85% (Grade A). Since it was a major university project, I cannot openly host the code or report on Github, though it can be shared on request.</p>
+							<span class="link back">Back</span></p>
 						</div>
 						
 					</div>
