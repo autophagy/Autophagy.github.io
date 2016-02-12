@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Multi/Timer // Autophagy</title>
+
+    <!-- Bootstrap -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/css/index.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+    <div id="site-wrapper">
+
+        <script>
+            document.getElementById('site-wrapper').style.display = 'none';
+        </script>
+
+        <div id="bio-bar" class="dark-section">
+          <a href="/"><img src="/images/logo-small.png" alt="Autophagy"/></a>
+
+          <div id="contact-icons">
+            <a href="mailto:mail@deadcells.org"><img src="/images/email-icon-small.png" alt="Email"></a>
+            <a href="https://github.com/Autophagy"><img src="/images/github-icon-small.png" alt="Github"></a>
+            <a href="https://autophagy.itch.io/"><img src="/images/itch-icon-small.png" alt="Itch.io"></a>
+          </div>
+          <div id="moth-container">
+            <a href="/"><img src="/images/moth.png" class="moth" alt="Moth Goth"/></a>
+          </div>
+        </div>
+
+        <div id="blog-content" class="light-section">
+          <h1>Multi/Timer</h1>
+          <div class="content-wrapper">
+            While at the Chaos Communication Camp 2015 (which was great), I had an idea for a small software project. I often use online timers when cooking (since my physical timer is broken) and these online timers are... well, not so good. They're nearly all old, ugly, reliant on flash (!!!) or a combination of all 3. They also only usually have 1 timer per page, when I often would need to time multiple things (such as dough rising, stew simmering, etc).
+
+            So, wanting a little bit of HTML/CSS/JS practice, I decided to make my own solution. I wanted it to revolve around 3 key points:
+            <ul>
+            	<li>Emphasis on multiple timers</li>
+            	<li>Colourful and simple, in opposition to the other sites that look like someone tumbled the early 00s web into a garbage compactor.</li>
+            	<li>Ability to work on multiple screen sizes</li>
+            </ul>
+            <h2>Multiple Timers</h2>
+            One of the issues that comes about when tracking multiple things at once is that I can often forget which timer is tracking which process, especially if they're tracking processes that take similar amounts of time (it's easier to distinguish between a timer for 5 minutes and a timer for 2 hours, for example). I thought that the timers could benefit from the user being able to set a title for it, as well as having a small notes section. With these criteria in mind, I designed the representation of the timer to be a 'card':
+
+            <img class="aligncenter size-full wp-image-302" style="border: none;" src="http://www.deadcells.org/wp-content/uploads/2015/08/cardexample.png" alt="Example Timer Card" width="717" height="428" />
+
+            These cards can then be easily stacked next to each other. The result is a clean looking interface in which each timer is easily identifiable:
+
+            <img class="aligncenter size-full wp-image-305" style="border: none;" src="http://www.deadcells.org/wp-content/uploads/2015/08/timers.png" alt="Multiple Timers" width="914" height="402" />
+
+            In the code, the multiple timers functionality is achieved by fudging a kind of object-orientated approach (<a href="http://www.typescriptlang.org/" target="_blank">TypeScript</a> helped me here). When a timer is created, it gives it an ID which is just the string 'timer-' with a number appended on the end, which is incremented whenever a timer is created. This is then placed in an associative array, where the key is the ID and the object is refers to is the timer.
+            <h2>Colourful Interface</h2>
+            One way I thought would be useful in distinguishing between different timers would to have them be random colours upon creation. However, I wanted to keep a vaguely-pastel similarity between any colour generated, and found that the easiest way of doing this would be to use HSL colours. HSL colours are defined by 3 values:
+            <ul>
+            	<li><strong>Hue </strong>- A value between 0 and 359, corresponding to a position on the colour wheel.</li>
+            	<li><strong>Saturation</strong> - A value between 0 and 1, corresponding to the percentage of saturation (0% saturation being greyscale).</li>
+            	<li><strong>Lightness </strong>- A value between 0 and 1, corresponding to the brightness of the colour (100% lightness is white, 0% is black).</li>
+            </ul>
+            By keeping the saturation and lightness the same (100% and 70% respectively) and then randomly choosing positions on the colour wheel, we can maintain a pastel vibe while having a variety of colours! This was done via:
+            <pre><code class="js">$.<span class="pl-c1">Color</span>().<span class="pl-c1">hsla</span>(<span class="pl-c1">Math</span>.<span class="pl-c1">floor</span>(<span class="pl-c1">Math</span>.<span class="pl-c1">random</span>() <span class="pl-k">*</span> <span class="pl-c1">360)</span>,<span class="pl-c1">1</span>,<span class="pl-c1">0.7</span>,<span class="pl-c1">1</span>);</code></pre>
+            However, this was not quite satisfactory, as it would often produce colours that were very visually close to one another. I decided that instead of choosing between 360 different positions, I would divide the colour wheel into 36 chunks, and then randomly choose from those 36:
+            <pre><code class="js">$.Color().hsla(Math.floor(Math.random() * 36)*10,1,0.7,1);</code></pre>
+            This produces a nice variation of different card colours, albeit with occasional repeats.
+
+            <img class="aligncenter size-full wp-image-307" style="border: none;" src="http://www.deadcells.org/wp-content/uploads/2015/08/cardcolours.png" alt="Card colours" width="1154" height="485" />
+            <h2>Multiple Screen Sizes</h2>
+            Due to the way it was designed, getting the timers to work on multiple screen widths was fairly easy. Originally the timers were just floated left in the CSS, and then the browser would automatically fit as many as it could on 1 line as possible, given the screen width. However, this led to a problem when there was only enough screen width available for, say, 3.75 timer cards:
+
+            <img class="aligncenter size-full wp-image-309" style="border: none;" src="http://www.deadcells.org/wp-content/uploads/2015/08/timerspacingbad.png" alt="Poor timer spacing" width="1148" height="477" />
+
+            As you can see, this leaves a big chunk of empty space at the side of the window. An easy solution would just be to centre everything, but I liked the visual idea of adding cards from left-to-right. I solved this by writing a small javascript function that runs whenever the window is resized:
+            <pre><code class="js">function resizeTimerspace() {
+                var size = $(".timer").outerWidth(true);
+                if (size != null) {
+                    var screenSize = $(window).width();
+                    $('#timerspace').css("margin-left", Math.floor((screenSize - (size * (Math.floor(screenSize/size))))/2) +"px");
+                }
+            }
+
+            $( window ).resize(function() {
+              resizeTimerspace();
+            });
+            </code></pre>
+            The function grabs the width of the timer cards (including padding and margin), calculates how many will fit into the screen width and what the amount of left over pixel space will be. It then takes this left over space, divides it by 2 and sets it as the left margin of the timer space. This produces a nice effect where there is an equal margin on each side of the timer space that centres it, regardless of the screen size:
+
+            <img class="aligncenter size-full wp-image-310" style="border: none;" src="http://www.deadcells.org/wp-content/uploads/2015/08/timerspacinggood.png" alt="timerspacinggood" width="1143" height="475" />
+
+            I now use this regularly when cooking and it has proven pretty useful - it's always nice to work on a hobby project that you actually use! There are still some things to improve, such as input validation, timer muting and better notifications. The code is available on <a href="https://github.com/Autophagy/multitimer" target="_blank">Github</a> and and you can use it at <a href="http://multitimer.io" target="_blank">multitimer.io</a>.
+          </div>
+        </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/js/bootstrap.min.js"></script>
+
+    <script>
+        $(window).on('load', function() {
+            $('#site-wrapper').fadeIn(400);
+        });
+    </script>
+
+</body>
+
+</html>
