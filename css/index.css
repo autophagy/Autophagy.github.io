@@ -224,56 +224,6 @@ a:visited {
 	padding-top: 1em;
 }
 
-/* Blog pages */
-
-#bio-bar {
-	position: fixed;
-	width: 23em;
-	text-align: center;
-	height: 100%;
-	padding: 1em 0em 1em 0em;
-}
-
-#bio-bar #contact-icons {
-	margin-top: 2em;
-}
-
-#bio-bar #contact-icons img {
-	margin: 0 1em 0 1em;
-}
-
-#moth-container {
-	position: absolute;
-	width:100%;
-	bottom: 1em;
-}
-
-#blog-content {
-	margin-left: 23em;
-}
-
-#blog-content img.aligncenter {
-		clear: both;
-    display: block;
-    margin: 0 auto;
-		padding: 1em 0em 1em 0em;
-}
-
-#blog-content h1 {
-	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-  position: relative;
-  font-size: 2.5em;
-  left: 0;
-  top: 0;
-  text-align: center;
-  width: 100%;
-  background-color: rgba(130,130,130,0.06);
-}
-
-#blog-content .content-wrapper {
-	max-width: 70em;
-}
-
 /* Media Queries */
 
 @media only screen and (max-width: 1150px) {
@@ -298,10 +248,6 @@ a:visited {
 	#projects .project-detail .vimeo-embed {
 	    height: 50vw;
 	}
-}
-
-@media only screen and (max-width: 670px) {
-
 }
 
 @media only screen and (max-width: 600px) {
