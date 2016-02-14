@@ -8,6 +8,11 @@
 	padding: 1em 0em 1em 0em;
 }
 
+#bio-bar .logo {
+	max-width: 100%;
+	padding: 0em 1em 0em 1em;
+}
+
 #bio-bar #contact-icons {
 	margin-top: 2em;
 }
@@ -36,6 +41,11 @@
 
 #blog-content {
 	margin-left: 23em;
+	min-height: 100%;
+}
+
+#blog-content canvas {
+	max-width: 100%;
 }
 
 #blog-content img.aligncenter {
@@ -62,12 +72,23 @@
 	max-width: 70em;
 }
 
+#blog-content .vimeo-embed {
+	height: 37em;
+}
+
+
 /* Blog Page Media Queries */
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1200px) {
+	#blog-content .vimeo-embed {
+	    height: 50vw;
+	}
+}
+
+@media only screen and (max-width: 1024px) {
 	#bio-bar {
 		position: relative;
-    height: 13em;
+    height: auto;
     width: 100%;
 	}
 

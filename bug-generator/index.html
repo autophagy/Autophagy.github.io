@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bug Generator // Autophagy</title>
+
+    <!-- Bootstrap -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/css/index.css" rel="stylesheet">
+    <link href="/css/blog-page.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+    <div id="site-wrapper">
+
+        <script>
+            document.getElementById('site-wrapper').style.display = 'none';
+        </script>
+
+        <div id="bio-bar" class="dark-section">
+          <a href="/"><img class="logo" src="/images/logo-small.png" alt="Autophagy"/></a>
+
+          <div id="contact-icons">
+            <ul>
+              <li>
+                <a href="mailto:mail@deadcells.org"><img src="/images/email-icon.png" alt="Email"></a>
+              </li>
+              <li>
+                <a href="https://github.com/Autophagy"><img src="/images/github-icon.png" alt="Github"></a>
+              </li>
+              <li>
+                <a href="https://twitter.com/autophagyDev"><img src="/images/twitter-icon.png" alt="Twitter"></a>
+              </li>
+              <li>
+                <a href="https://autophagy.itch.io/"><img src="/images/itchio-icon.png" alt="Itch.io"></a>
+              </li>
+              <li>
+                <a href="http://www.freecodecamp.com/autophagy"><img src="/images/freecodecamp-icon.png" alt="FreeCodeCamp"></a>
+              </li>
+            </ul>
+          </div>
+          <div id="moth-container">
+            <a href="/"><img src="/images/moth.png" class="moth" alt="Moth Goth"/></a>
+          </div>
+        </div>
+
+        <div id="blog-content" class="light-section">
+          <h1>Bug Generator</h1>
+          <div class="content-wrapper">
+            <p>This is a small (and evolving) Processing sketch to generate the bug of your dreams. Press space to pause/unpause the generation, and press R to reset it. 1 and 2 toggles the background style.</p>
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.4.16/processing.min.js"></script>
+            <p style="text-align: center; max-width: 100%"><canvas data-processing-sources="bugGenerator.pde"></canvas></p>
+
+            <p>Code is available on <a href="https://github.com/Autophagy/bug-generator">Github</a>.</p>
+
+            <h2>Bug Visualiser</h2>
+            <p>This is a modification of the generator code that takes a music file, and alters the radius of the drawn ellipses based on the beats in the music. Beat detection is provided by the Minim library included with Processing. An example of it working:</p>
+
+            <p class="vimeo-embed"><iframe src="https://player.vimeo.com/video/134623868" width="100%" height="100%" frameborder="0" allowfullscreen="allowfullscreen"></iframe></p>
+
+            <p>Code for the visualiser is also avaliable on <a href="https://github.com/Autophagy/bug-generator/blob/master/bugVisualiser/bugVisualiser.pde">Github</a>.</p>
+          </div>
+        </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/js/bootstrap.min.js"></script>
+
+    <script>
+        $(window).on('load', function() {
+            $('#site-wrapper').fadeIn(400);
+        });
+    </script>
+
+</body>
+
+</html>

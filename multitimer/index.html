@@ -31,7 +31,7 @@
         </script>
 
         <div id="bio-bar" class="dark-section">
-          <a href="/"><img src="/images/logo-small.png" alt="Autophagy"/></a>
+          <a href="/"><img class="logo" src="/images/logo-small.png" alt="Autophagy"/></a>
 
           <div id="contact-icons">
             <ul>
@@ -71,11 +71,11 @@
             <h2>Multiple Timers</h2>
             One of the issues that comes about when tracking multiple things at once is that I can often forget which timer is tracking which process, especially if they're tracking processes that take similar amounts of time (it's easier to distinguish between a timer for 5 minutes and a timer for 2 hours, for example). I thought that the timers could benefit from the user being able to set a title for it, as well as having a small notes section. With these criteria in mind, I designed the representation of the timer to be a 'card':
 
-            <img class="aligncenter size-full wp-image-302" style="border: none;" src="http://www.deadcells.org/wp-content/uploads/2015/08/cardexample.png" alt="Example Timer Card" width="717" height="428" />
+            <img class="aligncenter" src="images/cardexample.png" alt="Example Timer Card" />
 
             These cards can then be easily stacked next to each other. The result is a clean looking interface in which each timer is easily identifiable:
 
-            <img class="aligncenter size-full wp-image-305" style="border: none;" src="http://www.deadcells.org/wp-content/uploads/2015/08/timers.png" alt="Multiple Timers" width="914" height="402" />
+            <img class="aligncenter" src="images/timers.png" alt="Multiple Timers"  />
 
             In the code, the multiple timers functionality is achieved by fudging a kind of object-orientated approach (<a href="http://www.typescriptlang.org/" target="_blank">TypeScript</a> helped me here). When a timer is created, it gives it an ID which is just the string 'timer-' with a number appended on the end, which is incremented whenever a timer is created. This is then placed in an associative array, where the key is the ID and the object is refers to is the timer.
             <h2>Colourful Interface</h2>
@@ -91,11 +91,11 @@
             <pre><code class="js">$.Color().hsla(Math.floor(Math.random() * 36)*10,1,0.7,1);</code></pre>
             This produces a nice variation of different card colours, albeit with occasional repeats.
 
-            <img class="aligncenter size-full wp-image-307" style="border: none;" src="http://www.deadcells.org/wp-content/uploads/2015/08/cardcolours.png" alt="Card colours" width="1154" height="485" />
+            <img class="aligncenter" src="images/cardcolours.png" alt="Card colours" />
             <h2>Multiple Screen Sizes</h2>
             Due to the way it was designed, getting the timers to work on multiple screen widths was fairly easy. Originally the timers were just floated left in the CSS, and then the browser would automatically fit as many as it could on 1 line as possible, given the screen width. However, this led to a problem when there was only enough screen width available for, say, 3.75 timer cards:
 
-            <img class="aligncenter size-full wp-image-309" style="border: none;" src="http://www.deadcells.org/wp-content/uploads/2015/08/timerspacingbad.png" alt="Poor timer spacing" width="1148" height="477" />
+            <img class="aligncenter" src="images/timerspacingbad.png" alt="Poor timer spacing" />
 
             As you can see, this leaves a big chunk of empty space at the side of the window. An easy solution would just be to centre everything, but I liked the visual idea of adding cards from left-to-right. I solved this by writing a small javascript function that runs whenever the window is resized:
             <pre><code class="js">function resizeTimerspace() {
@@ -112,7 +112,7 @@
             </code></pre>
             The function grabs the width of the timer cards (including padding and margin), calculates how many will fit into the screen width and what the amount of left over pixel space will be. It then takes this left over space, divides it by 2 and sets it as the left margin of the timer space. This produces a nice effect where there is an equal margin on each side of the timer space that centres it, regardless of the screen size:
 
-            <img class="aligncenter size-full wp-image-310" style="border: none;" src="http://www.deadcells.org/wp-content/uploads/2015/08/timerspacinggood.png" alt="timerspacinggood" width="1143" height="475" />
+            <img class="aligncenter" src="images/timerspacinggood.png" alt="timerspacinggood" />
 
             I now use this regularly when cooking and it has proven pretty useful - it's always nice to work on a hobby project that you actually use! There are still some things to improve, such as input validation, timer muting and better notifications. The code is available on <a href="https://github.com/Autophagy/multitimer" target="_blank">Github</a> and and you can use it at <a href="http://multitimer.io" target="_blank">multitimer.io</a>.
           </div>

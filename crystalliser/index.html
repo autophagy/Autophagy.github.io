@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Crystalliser // Autophagy</title>
+
+    <!-- Bootstrap -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/css/index.css" rel="stylesheet">
+    <link href="/css/blog-page.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+    <div id="site-wrapper">
+
+        <script>
+            document.getElementById('site-wrapper').style.display = 'none';
+        </script>
+
+        <div id="bio-bar" class="dark-section">
+          <a href="/"><img class="logo" src="/images/logo-small.png" alt="Autophagy"/></a>
+
+          <div id="contact-icons">
+            <ul>
+              <li>
+                <a href="mailto:mail@deadcells.org"><img src="/images/email-icon.png" alt="Email"></a>
+              </li>
+              <li>
+                <a href="https://github.com/Autophagy"><img src="/images/github-icon.png" alt="Github"></a>
+              </li>
+              <li>
+                <a href="https://twitter.com/autophagyDev"><img src="/images/twitter-icon.png" alt="Twitter"></a>
+              </li>
+              <li>
+                <a href="https://autophagy.itch.io/"><img src="/images/itchio-icon.png" alt="Itch.io"></a>
+              </li>
+              <li>
+                <a href="http://www.freecodecamp.com/autophagy"><img src="/images/freecodecamp-icon.png" alt="FreeCodeCamp"></a>
+              </li>
+            </ul>
+          </div>
+          <div id="moth-container">
+            <a href="/"><img src="/images/moth.png" class="moth" alt="Moth Goth"/></a>
+          </div>
+        </div>
+
+        <div id="blog-content" class="light-section">
+          <h1>Crystalliser</h1>
+          <div class="content-wrapper">
+            <p>A while ago I wrote a <a href="https://github.com/Autophagy/crystalliser" target="_blank">small sketch in Processing</a> that took an image and 'crystallised' it - pixelating it via triangles, rather than squares. The result produced something that looked vaguely crystal-ish, like so:</p>
+
+            <img class="aligncenter" src="images/crystalliser-process.png" alt="Before/after crystallisation" />
+
+            <p>A few people thought it was cool and I thought it would be nice if it was publicly accessable. The form that I thought this should take was a twitter bot that would reply to tweets that had pictures attached with a crystallised version of it. I also decided that I'd do it via a python script (using Tweepy and Pillow) as practice!</p>
+            <h2>Crystallisation</h2>
+            <p>I thought it would be good to re-write the crystallisation logic from scratch for 2 reasons:</p>
+            <ol>
+            	<li>In Processing, pixels in an image are represented as a 1-dimensional array, so that a 10px by 10x image is an array with a max index of 99. In python, however, pixels in an image are represented via zero-based coordinates, so that the last pixel in a 10px by 10px image can be accessed via the coordinate [9,9].</li>
+            	<li>The original implementation was a little lazily written and biased the upper half of the chunk by a couple of pixels compared to the lower half. Didn't make much difference in practice, but it made the difference between the 2 functions hard to understand.</li>
+            </ol>
+            <p>The crystallisation process first splits the image into 'chunks' of a specific size. I decided on 10px for the chunk size, primarily because the effects of the crystallisation process aren't as nice at sizes above or below it, and also because its a nice, simple number. These 10px chunks are then split in half and the colours in each half are averaged:</p>
+
+            <img class="aligncenter" src="images/grid.png" alt="Average pixel colour grid division" />
+
+            <p>The algorithm for both the upper and lower half increments through the Y values and calculates the range of X values to average up. In the following examples 'chunkSize' actually refers to (chunk size - 1), due to the pixel map having 0 based indices. For the top half, the range is described by:</p>
+
+            <img class="aligncenter" src="images/xeq.png" alt="xRange = [0..n] where n = (chunkSize - Y) - (Y mod 2)" />
+
+            <p>To calculate the bottom half of the chunk, the range is similarly calculated:</p>
+
+            <img class="aligncenter" src="images/xeq-2.png" alt="xRange = [n...chunkSize] where n = (chunkSize - Y) + ((Y + 1) mod 2)" />
+
+            <p>Now each half has  <img src="images/eq3.png" alt="chunksize^2 / 2" /> pixels. However, as the grid above shows, this means that the diagonals are 2px right then 2px up, which leads to jagged edges:</p>
+
+            <img class="aligncenter" src="images/output.png" alt="Aliased output" />
+
+            <p>It's not really noticeable in areas of low colour differentiation. But in areas where there is a strong colour change or a contrast between light and dark it really stands out. An immediate solution was to use the ImageFilter library to blur the image and try and reduce the jagged edges:</p>
+
+            <img class="aligncenter" src="images/imagefilter.png" alt="Different anti-aliasing examples" />
+
+            <p>While the results are not <em>as</em> unsightly as the unfiltered version, they're still a little unsatisfying. Evidence of jagged edges are still visible in the gaussian blur, and the smoothed one is a little too blury. None of them capture the sharpness of the original Processing sketch. I then tried a different approach: anti-aliasing. The original image and the chunk size are scaled up to twice their original dimensions and the averaging work is done on the larger version. When done, the image in then scaled down to its original size using anti-aliasing. The result is something much closer to the original Processing sketch result:</p>
+
+            <img class="aligncenter" src="images/antialiased.png" alt="Anti-aliasing via downscaling" />
+
+            <p>Naively just scaling up the image twice introduces its own problem - there are now 4 times as many pixels to work on as before, increasing the processing time considerably. I lazily got around this by only taking every other colour value when working out the average colour, since pixels in the old image will be 2px by 2px blocks in the new one.</p>
+            <h2>Twitter Integration</h2>
+            <p>After the crystallisation was down to a somewhat satisfactory standard, I integrated it with the twitter API via <a href="https://github.com/tweepy/tweepy">Tweepy</a>. Whenever the script is run, it grabs the mentions timeline from twitter with a given sinceID (which is unpickled from a serialized file in the same directory). It then pickles the first returned mention's id to be used as the sinceID for the next time the script is run. It then pulls the image file from the media URL given in the tweet, crystallises it and tweets it back at the user for every tweet returned in the list of mentions.</p>
+
+            <p>I then set up the script to run as a cron job every 10 minutes on the Raspberry Pi under my desk:</p>
+
+            <img class="aligncenter" src="images/rpi.png" alt="Raspberry Pi" />
+
+            <p>And it seems to work! The bot is currently running at <a href="https://twitter.com/crystalliser">@crystalliser</a> and the code is available on <a href="https://github.com/Autophagy/crystalliser-bot">GitHub</a>. There's still a few improvements I need to make on it, primarily to do with efficiency. The crystallisation takes around 10-20+ seconds to run on the small Pi which is a little too long. I also want to be able to support gifs at some point, to return an animated gif with all the frames crystallised, but that would take much longer depending on how many frames the gif had. I could host it on Heroku for a bit more processing power but I like the idea of actually using the Raspberry Pi for something.</p>
+          </div>
+        </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/js/bootstrap.min.js"></script>
+
+    <script>
+        $(window).on('load', function() {
+            $('#site-wrapper').fadeIn(400);
+        });
+    </script>
+
+</body>
+
+</html>
