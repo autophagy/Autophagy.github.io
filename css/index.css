@@ -193,6 +193,10 @@ a:visited {
 	text-align: center;
 }
 
+#projects .project-detail .row {
+	margin-bottom: 1em;
+}
+
 /* Contact */
 
 #contact #contact-links-small {
