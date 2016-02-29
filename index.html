@@ -173,7 +173,7 @@
                         <h2>Twitter Background Restorer</h2>
                         <p>At some point in 2015, Twitter removed the feature that lets users set a background image or colour for their main timeline view and replaced it with a solid bright grey. This hurt my eyes, and had no reasonable benefit I could think of, so I wrote a chrome extension that put the old image back. This was originally purely for personal use but grew fairly popular!</p>
 
-                        <p>Due to Twitter's security rules, the image can only be loaded into the CSS using Javascript if it is hosted on a twitter domain (such as twimg). This means, to restore my original background picture, I had to delve into the source HTML and extract the original URL of the uploaded background. It's a little bit of a convoluted process, but it seems the instructions I put into the extension were sufficient.</p>
+                        <p>Originally, due to Twitter's content security rules, the image could only be loaded into the CSS via the extension if it was on a twitter approved domain (such as twimg, or the facebook CDN). However, I got around this problem by loading the image into a canvas and storing, locally, the base 64 representation of the image. This could then be loaded into the CSS without violating the content security policy.</p>
 
                         <p>Since I made it, I have maintained and improved it by adding a more user-friendly settings page, functionality for tiling background and solid colour backgrounds, the ability to have individual rules based on the currently logged in twitter user, as well as small bug fixes.</p>
 
