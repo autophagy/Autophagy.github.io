@@ -264,6 +264,8 @@ a {
 }
 
 #title-page nav {
+	display: flex;
+	justify-content: space-between;
 	margin-top: 1em;
 	font-size: 2.5em;
 	font-weight: 200;
