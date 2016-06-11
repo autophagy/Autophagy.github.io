@@ -59,7 +59,7 @@ abbr[title] {
 
 b,
 strong {
-	font-weight: bold;
+	font-weight: 400;
 }
 
 dfn {
@@ -220,6 +220,9 @@ html {
 	overflow-y:scroll;
 	color: #1F1F1F;
 	font-family: 'Open Sans', sans-serif;
+	font-size: 22px;
+	line-height: 1.5em;
+	font-weight: 200;
 }
 
 html, body {
@@ -235,12 +238,34 @@ a {
 	height: 100%;
 }
 
+section {
+	position: relative;
+	box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);
+}
+
 .pull-left {
 	float: left;
 }
 
 .pull-right {
 	float: right;
+}
+
+.img-responsive {
+	width: 100%;
+	text-align: center;
+}
+
+.img-responsive img {
+	max-width: 100%;
+}
+
+.img-shadow {
+	box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.35);
+}
+
+.img-circle {
+	border-radius: 50%;
 }
 
 /*--------------------------------------------------------------
@@ -254,6 +279,7 @@ a {
 	justify-content: center;
 	background-image: url('../images/background.jpg');
 	background-size: cover;
+	z-index: 4
 }
 
 #title-wrapper {
@@ -267,9 +293,25 @@ a {
 	display: flex;
 	justify-content: space-between;
 	margin-top: 1em;
-	font-size: 2.5em;
-	font-weight: 200;
+	font-size: 2em;
 	max-width: 757px;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+/*--------------------------------------------------------------
+# About Page
+--------------------------------------------------------------*/
+
+#about-page {
+	min-height: 100%;
+	background-image: url('../images/background-about.jpg');
+	background-size: cover;
+	z-index: 3;
+}
+
+#about-wrapper {
+	max-width: 1000px;
+	margin: 0 auto;
+	padding: 2em 1em;
 }
