@@ -234,6 +234,11 @@ a {
 	text-decoration: none;
 }
 
+h2 {
+	margin-top: 0;
+	font-weight: 400;
+}
+
 #site-wrapper {
 	height: 100%;
 }
@@ -314,4 +319,46 @@ section {
 	max-width: 1000px;
 	margin: 0 auto;
 	padding: 2em 1em;
+}
+
+/*--------------------------------------------------------------
+# Projects Page
+--------------------------------------------------------------*/
+
+#projects-page {
+	min-height: 100%;
+	background-image: url('../images/background-projects.jpg');
+	background-repeat: repeat;
+	z-index: 2;
+}
+
+#projects-wrapper {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 2em 1em;
+}
+
+.project-wrapper {
+	box-shadow: 0 4px 4px -4px rgba(0,0,0,0.1);
+	padding-bottom: 1em;
+	padding-top: 1em;
+	display: flex;
+}
+
+.project-wrapper .project-image, .project-wrapper .project-description {
+	width: 50%;
+	padding-top: 1em;
+	padding-bottom: 1em;
+}
+
+.project-wrapper .project-image {
+	padding-right: 1em;
+}
+
+.project-wrapper .project-description {
+	padding-left: 1em;
+}
+
+.project-tools {
+	opacity: 0.75;
 }
