@@ -308,7 +308,7 @@ section {
 # About Page
 --------------------------------------------------------------*/
 
-#about-page {
+#about {
 	min-height: 100%;
 	background-image: url('../images/background-about.jpg');
 	background-size: cover;
@@ -325,7 +325,7 @@ section {
 # Projects Page
 --------------------------------------------------------------*/
 
-#projects-page {
+#projects {
 	min-height: 100%;
 	background-image: url('../images/background-projects.jpg');
 	background-repeat: repeat;
@@ -339,7 +339,7 @@ section {
 }
 
 .project-wrapper {
-	box-shadow: 0 4px 4px -4px rgba(0,0,0,0.1);
+	box-shadow: 0 4px 4px -4px rgba(0,0,0,0.2);
 	padding-bottom: 1em;
 	padding-top: 1em;
 	display: flex;
