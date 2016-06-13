@@ -309,7 +309,6 @@ section {
 --------------------------------------------------------------*/
 
 #about {
-	min-height: 100%;
 	background-image: url('../images/background-about.jpg');
 	background-size: cover;
 	z-index: 3;
@@ -361,4 +360,83 @@ section {
 
 .project-tools {
 	opacity: 0.75;
+}
+
+/*--------------------------------------------------------------
+# Title Page
+--------------------------------------------------------------*/
+
+#contact {
+	background-image: url('../images/background-contact.jpg');
+	color: #E6E6E6;
+	z-index: 1;
+}
+
+#contact-wrapper {
+	padding: 1em;
+	margin: 0 auto;
+	max-width: 1000px;
+	overflow: hidden;
+}
+
+#form-wrapper {
+	width: 70%;
+	float: left;
+}
+
+#contact-buttons {
+	width: 30%;
+	float: right;
+}
+
+#contact-buttons img {
+	width: 45px;
+	margin: 0.25em;
+}
+
+#contact-grid {
+	padding: 0em 2.8em;
+	text-align: center;
+}
+
+#contact form {
+	color: #1F1F1F;
+}
+
+#contact .form-section {
+	margin-bottom: 1em;
+	overflow: hidden;
+}
+
+#contact .space-between {
+	display: flex;
+	justify-content: space-between;
+}
+
+#contact input[type="text"], #contact input[type="email"], #contact textarea {
+	color: #666;
+	font-size: 0.75em;
+	line-height: 1.5em;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	background-color: #E6E6E6;
+	width: 25%;
+	padding: 0.5em;
+}
+
+#contact textarea {
+	width: 100%;
+	box-sizing: border-box;
+}
+
+#contact input[type="submit"] {
+		float: right;
+    border-radius: 4px;
+    background: #E6E6E6;
+    color: #1F1F1F;
+    font-size: 12px;
+    font-size: 1rem;
+    line-height: 1;
+    padding: .6em 1em;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.2);
 }
