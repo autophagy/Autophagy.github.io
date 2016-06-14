@@ -353,6 +353,10 @@ section {
 	display: flex;
 }
 
+.project-wrapper:last-child {
+	box-shadow: none;
+}
+
 .project-wrapper .project-image, .project-wrapper .project-description {
 	width: 50%;
 	padding-top: 1em;
@@ -369,6 +373,22 @@ section {
 
 .project-tools {
 	opacity: 0.75;
+}
+
+#misc-projects-grid {
+	width: 100%;
+	padding-top: 1em;
+}
+
+#misc-projects-grid .misc-project-icon {
+	float: left;
+	width: 14.285714286%;
+	text-align: center;
+	opacity: 0.75;
+}
+
+#misc-projects-grid .misc-project-icon:hover {
+	opacity: 1;
 }
 
 /*--------------------------------------------------------------
