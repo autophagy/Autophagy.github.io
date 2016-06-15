@@ -459,13 +459,14 @@ section {
 }
 
 #contact input[type="submit"] {
-		float: right;
-    border-radius: 4px;
-    background: #E6E6E6;
-    color: #1F1F1F;
-    font-size: 12px;
-    font-size: 1rem;
-    line-height: 1;
-    padding: .6em 1em;
-    border-bottom: 3px solid rgba(0, 0, 0, 0.2);
+	float: right;
+	border-radius: 4px;
+	background: #E6E6E6;
+	color: #1F1F1F;
+	font-size: 12px;
+	font-size: 1rem;
+	line-height: 1;
+	padding: .6em 1em;
+	border: none;
+	border-bottom: 3px solid rgba(0, 0, 0, 0.2);
 }
