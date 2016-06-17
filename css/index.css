@@ -440,7 +440,7 @@ section {
 	float: right;
 }
 
-#contact-buttons img {
+#contact-grid img {
 	width: 45px;
 	margin: 0.25em;
 }
@@ -448,6 +448,11 @@ section {
 #contact-grid {
 	padding: 0em 2.8em;
 	text-align: center;
+}
+
+#sigil {
+	text-align: center;
+	margin-top: 1em;
 }
 
 #contact form {
