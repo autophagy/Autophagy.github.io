@@ -56,7 +56,7 @@
 
     <section id="projects">
       <div id="projects-wrapper">
-        <div class="project-wrapper">
+        <div class="project-wrapper flex-wrapper">
           <div class="project-image">
             <img class="img-responsive img-shadow" src="images/multitimer.png">
           </div>
@@ -68,7 +68,7 @@
           <hr>
         </div>
 
-        <div class="project-wrapper">
+        <div class="project-wrapper flex-wrapper">
           <div class="project-image">
             <img class="img-responsive img-shadow" src="images/mainframe.png">
           </div>
@@ -80,7 +80,7 @@
           </div>
         </div>
 
-        <div class="project-wrapper">
+        <div class="project-wrapper flex-wrapper">
           <div class="project-image">
             <img class="img-responsive img-shadow" src="images/museumzeit.png">
           </div>
@@ -91,47 +91,107 @@
           </div>
         </div>
 
-        <div class="project-wrapper">
+        <div class="project-wrapper flex-wrapper">
           <div class="project-image">
             <img class="img-responsive img-shadow" src="images/avari.png">
           </div>
           <div class="project-description">
             <h2>Avari</h2>
             <p>A custom minimalist 2 column mobile-friendly wordpress theme, with emerald green accents and an owl. Emphasis on using spacing and typography to present large bodies of text. Degrades gracefully on mobile resolutions so that the right hand column becomes a collapsed accordian menu at the bottom of the page. Developed for <a href="http://mccaine.org/" target="_blank">Notes &amp; Commentaries</a> and the theme is available on <a href="https://github.com/Autophagy/avari-wp-theme" target="_blank">Github</a>.</p>
-            <p class="project-tools">HTML5/CSS3, Wordpress Theme Development, Responsive Design, Jquery, PHP</p>
+            <p class="project-tools">HTML5/CSS3, Wordpress Theme Development, Responsive Design, jQuery, PHP</p>
           </div>
         </div>
 
         <div class="project-wrapper">
           <div id="misc-projects-grid">
             <div class="misc-project-icon">
-              <img src="images/twitter-icon.jpg">
+              <img id="twitter-bg" src="images/twitter-icon.jpg">
             </div>
 
             <div class="misc-project-icon">
-              <img src="images/disc-icon.jpg">
+              <img id="disc" src="images/disc-icon.jpg">
             </div>
 
             <div class="misc-project-icon">
-              <img src="images/web-dev-icon.jpg">
+              <img id="web-dev" src="images/web-dev-icon.jpg">
             </div>
 
             <div class="misc-project-icon">
-              <img src="images/crystalliser-icon.jpg">
+              <img id="crystalliser" src="images/crystalliser-icon.jpg">
             </div>
 
             <div class="misc-project-icon">
-              <img src="images/fcc-icon.jpg">
+              <img id="fcc" src="images/fcc-icon.jpg">
             </div>
 
             <div class="misc-project-icon">
-              <img src="images/bug-gen-icon.jpg">
+              <img id="bug-gen" src="images/bug-gen-icon.jpg">
             </div>
 
             <div class="misc-project-icon">
-              <img src="images/misc-icon.jpg">
+              <img id="misc" src="images/misc-icon.jpg">
             </div>
           </div>
+
+          <div id="twitter-bg-desc" class="misc-project-wrapper">
+            <div class="misc-project-description">
+              <h2>Twitter Background Replacer</h2>
+              <p>At some point in 2015, Twitter removed the feature that lets users set a background image or colour for their main timeline view and replaced it with a solid bright grey. I felt like it was a poor decision from a usability point of view - the bright colour hurt my eyes and didn't provide enough of a contrast with the content around it.</p>
+              <p>In response, I wrote a chrome extension to allow me to add a background image back into the CSS of the page. It was originally for personal use but grew fairly popular, so I have endevoured to maintain and improve it by adding in user-friendly settings, tiling and solid colour backgrounds. I also improved the extension so that it used Chrome's localStorage API to store the base64 representation of a chosen image which was then injected into the Twitter homepage CSS - in order not to violate Twitter's content security policy.</p>
+              <p>It has been linked to in <a href="http://www.theguardian.com/technology/2015/jul/21/twitter-removes-background-images-timeline-fix-chrom-plugin">The Guardian</a>, <a href="http://www.idigitaltimes.com/twitter-background-image-disappeared-heres-how-fix-it-460114">iDigitalTimes</a>, <a href="http://venturebeat.com/2015/07/21/as-twitter-turns-off-timeline-background-images-one-developer-has-already-built-a-workaround/">VentureBeat</a>, <a href="http://www.gizmodo.jp/2015/07/_twitter_2.html">Gizmodo</a>, and <a href="http://www.lifehacker.co.uk/2015/07/21/how-to-get-your-background-wallpaper-back-on-twitter">Lifehacker</a> - among other places.</p>
+              <p>The extension is availiable on the <a href="https://chrome.google.com/webstore/detail/twitter-background-restor/gcjejnlljikllkloanankijokfbaelhi">Chrome Store</a> and the source code is availiable on <a href="https://github.com/Autophagy/twitter-bg-restorer">Github</a>.</p>
+              <p class="project-tools">Javascript, Chrome Extension Development</p>
+            </div>
+          </div>
+
+          <div id="disc-desc" class="misc-project-wrapper">
+            <div class="misc-project-description">
+              <h2>DISC</h2>
+              <p>A custom minimalist 2 column mobile-friendly wordpress theme, with emerald green accents and an owl. Emphasis on using spacing and typography to present large bodies of text. Degrades gracefully on mobile resolutions so that the right hand column becomes a collapsed accordian menu at the bottom of the page. Developed for <a href="http://mccaine.org/" target="_blank">Notes &amp; Commentaries</a> and the theme is available on <a href="https://github.com/Autophagy/avari-wp-theme" target="_blank">Github</a>.</p>
+              <p class="project-tools">HTML5/CSS3, Wordpress Theme Development, Responsive Design, Jquery, PHP</p>
+            </div>
+          </div>
+
+          <div id="web-dev-desc" class="misc-project-wrapper">
+            <div class="misc-project-description">
+              <h2>Web Development</h2>
+              <p>A custom minimalist 2 column mobile-friendly wordpress theme, with emerald green accents and an owl. Emphasis on using spacing and typography to present large bodies of text. Degrades gracefully on mobile resolutions so that the right hand column becomes a collapsed accordian menu at the bottom of the page. Developed for <a href="http://mccaine.org/" target="_blank">Notes &amp; Commentaries</a> and the theme is available on <a href="https://github.com/Autophagy/avari-wp-theme" target="_blank">Github</a>.</p>
+              <p class="project-tools">HTML5/CSS3, Wordpress Theme Development, Responsive Design, Jquery, PHP</p>
+            </div>
+          </div>
+
+          <div id="crystalliser-desc" class="misc-project-wrapper">
+            <div class="misc-project-description">
+              <h2>Crystalliser Bot</h2>
+              <p>A custom minimalist 2 column mobile-friendly wordpress theme, with emerald green accents and an owl. Emphasis on using spacing and typography to present large bodies of text. Degrades gracefully on mobile resolutions so that the right hand column becomes a collapsed accordian menu at the bottom of the page. Developed for <a href="http://mccaine.org/" target="_blank">Notes &amp; Commentaries</a> and the theme is available on <a href="https://github.com/Autophagy/avari-wp-theme" target="_blank">Github</a>.</p>
+              <p class="project-tools">HTML5/CSS3, Wordpress Theme Development, Responsive Design, Jquery, PHP</p>
+            </div>
+          </div>
+
+          <div id="fcc-desc" class="misc-project-wrapper">
+            <div class="misc-project-description">
+              <h2>FreeCodeCamp Projects</h2>
+              <p>A custom minimalist 2 column mobile-friendly wordpress theme, with emerald green accents and an owl. Emphasis on using spacing and typography to present large bodies of text. Degrades gracefully on mobile resolutions so that the right hand column becomes a collapsed accordian menu at the bottom of the page. Developed for <a href="http://mccaine.org/" target="_blank">Notes &amp; Commentaries</a> and the theme is available on <a href="https://github.com/Autophagy/avari-wp-theme" target="_blank">Github</a>.</p>
+              <p class="project-tools">HTML5/CSS3, Wordpress Theme Development, Responsive Design, Jquery, PHP</p>
+            </div>
+          </div>
+
+          <div id="bug-gen-desc" class="misc-project-wrapper">
+            <div class="misc-project-description">
+              <h2>Bug Generator</h2>
+              <p>A custom minimalist 2 column mobile-friendly wordpress theme, with emerald green accents and an owl. Emphasis on using spacing and typography to present large bodies of text. Degrades gracefully on mobile resolutions so that the right hand column becomes a collapsed accordian menu at the bottom of the page. Developed for <a href="http://mccaine.org/" target="_blank">Notes &amp; Commentaries</a> and the theme is available on <a href="https://github.com/Autophagy/avari-wp-theme" target="_blank">Github</a>.</p>
+              <p class="project-tools">HTML5/CSS3, Wordpress Theme Development, Responsive Design, Jquery, PHP</p>
+            </div>
+          </div>
+
+          <div id="misc-desc" class="misc-project-wrapper">
+            <div class="misc-project-description">
+              <h2>Misc</h2>
+              <p>A custom minimalist 2 column mobile-friendly wordpress theme, with emerald green accents and an owl. Emphasis on using spacing and typography to present large bodies of text. Degrades gracefully on mobile resolutions so that the right hand column becomes a collapsed accordian menu at the bottom of the page. Developed for <a href="http://mccaine.org/" target="_blank">Notes &amp; Commentaries</a> and the theme is available on <a href="https://github.com/Autophagy/avari-wp-theme" target="_blank">Github</a>.</p>
+              <p class="project-tools">HTML5/CSS3, Wordpress Theme Development, Responsive Design, Jquery, PHP</p>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
@@ -169,6 +229,18 @@
   </div>
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <script>
+      $('#misc-projects-grid .misc-project-icon img').click(function() {
+        $(this).css('opacity', '1')
+        $('#misc-projects-grid .misc-project-icon img').not(this).css('opacity', '');
+        var s = $(this).attr('id') + '-desc';
+        $('.misc-project-wrapper').not('#' + s).slideUp(700);
+        $('#' + s).slideDown(700);
+      });
+
+      $('.misc-project-wrapper').hide();
+    </script>
 
     <!-- From https://css-tricks.com/snippets/jquery/smooth-scrolling/ -->
     <script>
