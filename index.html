@@ -163,8 +163,13 @@
           <div id="crystalliser-desc" class="misc-project-wrapper">
             <div class="misc-project-description">
               <h2>Crystalliser Bot</h2>
-              <p>A custom minimalist 2 column mobile-friendly wordpress theme, with emerald green accents and an owl. Emphasis on using spacing and typography to present large bodies of text. Degrades gracefully on mobile resolutions so that the right hand column becomes a collapsed accordian menu at the bottom of the page. Developed for <a href="http://mccaine.org/" target="_blank">Notes &amp; Commentaries</a> and the theme is available on <a href="https://github.com/Autophagy/avari-wp-theme" target="_blank">Github</a>.</p>
-              <p class="project-tools">HTML5/CSS3, Wordpress Theme Development, Responsive Design, Jquery, PHP</p>
+              <p>This project started out as a small experiment with pixel colour manipulation in Processing. I found that by averaging the pixel colour in triangular sections across an image, I could produce a simple but interesting looking pixelisation. The result looked a little crystalline.</p>
+              <div class="img-responsive">
+                <img src="images/crystalliser.png">
+              </div>
+              <p>I then rewrote this experiment from Processing (which is Java based) to Python, and integrated it with the Twitter API using the <a href="https://github.com/tweepy/tweepy">Tweepy</a> library. The script retrieves all tweets sent to the bot (since a given ID) and goes through each tweet. If the tweet contains an image, it is used as the scripts input and the result is sent back to the original tweeter. This script runs at set intervals as a cron job on my Raspberry Pi.</p>
+              <p>The code for this project is availiable on <a href="https://github.com/Autophagy/crystalliser-bot">Github</a>.
+              <p class="project-tools">Processing, Python, Image Manipulation, Twitter API</p>
             </div>
           </div>
 
