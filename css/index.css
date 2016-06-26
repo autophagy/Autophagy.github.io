@@ -391,7 +391,7 @@ section {
 
 #misc-projects-grid .misc-project-icon {
 	float: left;
-	width: 14.285714286%;
+	width: 16.666666667%;
 	text-align: center;
 }
 
@@ -415,6 +415,20 @@ section {
 
 .vimeo-embed {
 	height: 680px;
+}
+
+.misc-item {
+	display: flex;
+}
+
+.misc-item .img-col {
+	width: 50%;
+	padding: 1em 1em 1em 0;
+}
+
+.misc-item .desc-col {
+	width: 50%;
+	padding: 1em 0 1em 1em;
 }
 
 /*--------------------------------------------------------------

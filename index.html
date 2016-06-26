@@ -121,10 +121,6 @@
             </div>
 
             <div class="misc-project-icon">
-              <img id="fcc" src="images/fcc-icon.jpg">
-            </div>
-
-            <div class="misc-project-icon">
               <img id="bug-gen" src="images/bug-gen-icon.jpg">
             </div>
 
@@ -165,8 +161,93 @@
           <div id="web-dev-desc" class="misc-project-wrapper">
             <div class="misc-project-description">
               <h2>Web Development</h2>
-              <p>A custom minimalist 2 column mobile-friendly wordpress theme, with emerald green accents and an owl. Emphasis on using spacing and typography to present large bodies of text. Degrades gracefully on mobile resolutions so that the right hand column becomes a collapsed accordian menu at the bottom of the page. Developed for <a href="http://mccaine.org/" target="_blank">Notes &amp; Commentaries</a> and the theme is available on <a href="https://github.com/Autophagy/avari-wp-theme" target="_blank">Github</a>.</p>
-              <p class="project-tools">HTML5/CSS3, Wordpress Theme Development, Responsive Design, Jquery, PHP</p>
+
+              <div class="misc-item">
+                <div class="img-col img-responsive">
+                  <a href="http://slimgiltsoul.com/" target="_blank">
+                    <img class="img-shadow" src="images/projects/web-dev/slimgiltsoul.png">
+                  </a>
+                </div>
+                <div class="desc-col">
+                   <a href="http://slimgiltsoul.com/" target="_blank">Slimgiltsoul</a> - A clean, two size grid-based artist portfolio site with a few jQuery flourishes.
+                </div>
+              </div>
+
+              <div class="misc-item">
+                <div class="img-col img-responsive">
+                  <img class="img-shadow" src="images/projects/FCC/pomodoro.png">
+                </div>
+                <div class="desc-col">
+                   <a href="http://codepen.io/Autophagy/full/MyaGmO/" target="_blank">Build a Pomodoro Clock</a> - A tool to to facilitate the Pomodoro technique of time management where work is broken down into intervals, separated by breaks, of customisable lengths.
+                </div>
+              </div>
+
+              <div class="misc-item">
+                <div class="img-col img-responsive">
+                  <a href="http://codepen.io/Autophagy/full/xVGeJN/" target="_blank">
+                    <img class="img-shadow" src="images/projects/FCC/javascript-calculator.png">
+                  </a>
+                </div>
+                <div class="desc-col">
+                  <a href="http://codepen.io/Autophagy/full/xVGeJN/" target="_blank">Build a JavaScript Calculator</a> - A javascript calculator that allows you to chain addition, subtraction, division and multiplaction operations, as well as clear the screen.
+                </div>
+              </div>
+
+              <div class="misc-item">
+                <div class="img-col img-responsive">
+                  <a href="http://codepen.io/Autophagy/full/PZMgdx/" target="_blank">
+                    <img class="img-shadow" src="images/projects/FCC/twitch-viewer.png">
+                  </a>
+                </div>
+                <div class="desc-col">
+                  <a href="http://codepen.io/Autophagy/full/PZMgdx/" target="_blank">Use the Twitchtv JSON API</a> - An app that, given a list of <a href="http://www.twitch.tv/" target="_blank">Twitch</a> usernames, displays details about whether they are streaming, offline or closed. Also allows the user to filter the channels based on their status.
+                </div>
+              </div>
+
+              <div class="misc-item">
+                <div class="img-col img-responsive">
+                  <a href="http://codepen.io/Autophagy/full/xZvRXa/" target="_blank">
+                    <img class="img-shadow" src="images/projects/FCC/wikipedia-viewer.png">
+                  </a>
+                </div>
+                <div class="desc-col">
+                  <a href="http://codepen.io/Autophagy/full/xZvRXa/" target="_blank">Build a Wikipedia Viewer</a> - An app that uses the <a href="http://www.mediawiki.org/wiki/API:Main_page" target="_blank">Wikipedia API</a> to search wikipedia and display the results. Also includes a bonus random page button.
+                </div>
+              </div>
+
+              <div class="misc-item">
+                <div class="img-col img-responsive">
+                  <a href="http://codepen.io/Autophagy/full/qbGXQJ/" target="_blank">
+                    <img class="img-shadow" src="images/projects/FCC/local-weather.png">
+                  </a>
+                </div>
+                <div class="desc-col">
+                  <a href="http://codepen.io/Autophagy/full/qbGXQJ/" target="_blank">Show the Local Weather</a> - A small app that uses <a href="http://openweathermap.org/" target="_blank">OpenWeatherMap</a> and the HTML5 Geolocation API to show the local weather and temperature with details changing based on weather conditions and the time of day.
+                </div>
+              </div>
+
+              <div class="misc-item">
+                <div class="img-col img-responsive">
+                  <a href="http://codepen.io/Autophagy/full/VeReaO/" target="_blank">
+                    <img class="img-shadow" src="images/projects/FCC/quote-generator.png">
+                  </a>
+                </div>
+                <div class="desc-col">
+                  <a href="http://codepen.io/Autophagy/full/VeReaO/" target="_blank">Build a Random Quote Machine</a> - An app that uses the <a href="http://forismatic.com/en/" target="_blank">Forismatic</a> quote API to generate a random famous quote, as well as some fancy background colour shifting.
+                </div>
+              </div>
+
+              <div class="misc-item">
+                <div class="img-col img-responsive">
+                  <a href="http://codepen.io/Autophagy/full/ZWEdmo/" target="_blank">
+                    <img class="img-shadow" src="images/projects/FCC/tribute-page.png">
+                  </a>
+                </div>
+                <div class="desc-col">
+                  <a href="http://codepen.io/Autophagy/full/ZWEdmo/" target="_blank">Build a Tribute Page</a> - A tribute page to Albert Einstein, the father of modern physics.
+                </div>
+              </div>
+
             </div>
           </div>
 
@@ -180,14 +261,6 @@
               <p>I then rewrote this experiment from Processing (which is Java based) to Python, and integrated it with the Twitter API using the <a href="https://github.com/tweepy/tweepy">Tweepy</a> library. The script retrieves all tweets sent to the bot (since a given ID) and goes through each tweet. If the tweet contains an image, it is used as the scripts input and the result is sent back to the original tweeter. This script runs at set intervals as a cron job on my Raspberry Pi.</p>
               <p>The code for this project is availiable on <a href="https://github.com/Autophagy/crystalliser-bot">Github</a>.
               <p class="project-tools">Processing, Python, Image Manipulation, Twitter API</p>
-            </div>
-          </div>
-
-          <div id="fcc-desc" class="misc-project-wrapper">
-            <div class="misc-project-description">
-              <h2>FreeCodeCamp Projects</h2>
-              <p>A custom minimalist 2 column mobile-friendly wordpress theme, with emerald green accents and an owl. Emphasis on using spacing and typography to present large bodies of text. Degrades gracefully on mobile resolutions so that the right hand column becomes a collapsed accordian menu at the bottom of the page. Developed for <a href="http://mccaine.org/" target="_blank">Notes &amp; Commentaries</a> and the theme is available on <a href="https://github.com/Autophagy/avari-wp-theme" target="_blank">Github</a>.</p>
-              <p class="project-tools">HTML5/CSS3, Wordpress Theme Development, Responsive Design, Jquery, PHP</p>
             </div>
           </div>
 
