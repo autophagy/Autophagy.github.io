@@ -535,6 +535,16 @@ section {
 
 }
 
+@media only screen and (max-width: 720px) {
+	#form-wrapper {
+		width: 100%;
+	}
+
+	#contact-buttons {
+		width: 100%;
+	}
+}
+
 @media only screen and (max-width: 650px) {
 
 	#misc-projects-grid {
@@ -544,5 +554,20 @@ section {
 	#misc-projects-grid .misc-project-icon {
     width: 30%;
     text-align: center;
+	}
+}
+
+@media only screen and (max-width: 520px) {
+	.misc-item {
+		display: block;
+	}
+
+	.misc-item .img-col, .misc-item .desc-col	{
+		width: 100%;
+		padding: 1em 0em 1em 0em;
+	}
+
+	#form-wrapper {
+		display: none;
 	}
 }
