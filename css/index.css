@@ -455,8 +455,7 @@ section {
 }
 
 #contact-buttons {
-	width: 30%;
-	float: right;
+	width: 100%;
 }
 
 #contact-grid img {
