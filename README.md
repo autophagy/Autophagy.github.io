@@ -1,3 +1,3 @@
-# autophagy.github.io
+![Autophagy](images/logo.png)
 
-A sort of portfolio page. [Link](https://autophagy.github.io/)
+A sort of portfolio page. [∆](https://autophagy.github.io/)
