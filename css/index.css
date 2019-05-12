@@ -7,8 +7,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -19,7 +19,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -51,48 +51,38 @@ html, body {
    	margin: 0px;
    	padding: 0px;
    	max-width: 100%;
-   	font-family: 'Frank Ruhl Libre', serif;
-   	font-size: 12pt;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 400;
+   	font-size: 18pt;
+   	color: #FFFFFF;
+   	background-color: #000000;
+   	background-repeat: no-repeat;
+   	background-size: cover;
+	background-position: 50%;
+   	background-image: url('../img/bg.png');
 }
 
 body {
-	background-color: #1f1f1f;
 	display: flex;
 }
 
-footer {
-	position: absolute;
-	left: 60px;
-	bottom: 60px;
-	z-index: 150;
+#card {
+	margin: 2em;
 }
 
-footer, footer a {
-	color: #dadada;
+.sec {
+	margin-bottom: 1em;
 }
 
-footer a {
+p {
+	margin-bottom: 0.25em;
+}
+
+a {
+	color: #fff;
 	text-decoration: none;
-	cursor: pointer;
 }
 
-header {
-	position: absolute;
-	left: 60px;
-	top: 60px;
-}
-
-canvas {
- 	align-self: center;
- 	margin-left: auto;
-	margin-right: auto;
-}
-
-#noise-overlay {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	background-image: url('../images/noise.png');
-	opacity: 0.3;
-	z-index: 100;
+a:hover {
+    color: #16BE9D;
 }
