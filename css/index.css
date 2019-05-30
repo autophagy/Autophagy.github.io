@@ -87,3 +87,15 @@ a {
 a:hover {
     color: #16BE9D;
 }
+
+
+@media screen and (max-width: 800px) {
+    #card {
+        width: 100%;
+        text-align: center;
+    }
+
+    html, body {
+        background-position: 50% bottom;
+    }
+}
